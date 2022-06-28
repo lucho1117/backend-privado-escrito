@@ -5,7 +5,11 @@ const responsesServices = require('../responses/responses.services');
 
 
 exports.findAll = async () => {
-	let query = `SELECT * FROM Producto`;
+	let query = `SELECT pro.idProducto, pro.nombre producto, c.Nombre categoria, PRO.nombre proveedor, pre.precio, pre.descripcion
+				FROM Producto pro 
+				INNER JOIN Categoria c on c.idCategoria = pro.idCategoria
+				INNER JOIN Proveedor p on p.idProveedor = pro.idProveedor
+				INNER JOIN Presentacion pre on pre.idProducto = pro.idProducto`;
 		return sequelize
 		.query(query, {
 		type: Sequelize.QueryTypes.SELECT,

@@ -1,7 +1,7 @@
 /************************************************************************
  * IMPORTS
  ************************************************************************/
-const { findAll } = require('../../services/negocio.services');
+const { findAll } = require('../../services/producto.services');
 const responsesServices = require('../../responses/responses.services');
 
 /************************************************************************
